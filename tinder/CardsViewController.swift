@@ -15,14 +15,14 @@ class CardsViewController: UIViewController {
     @IBOutlet weak var picImageView: UIImageView!
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didCardSwipe(_:)))
-        
+
         // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
         picImageView.isUserInteractionEnabled = true
         picImageView.addGestureRecognizer(panGestureRecognizer)
         
-        super.viewDidLoad()
+        
         
 
         // Do any additional setup after loading the view.
@@ -44,9 +44,23 @@ class CardsViewController: UIViewController {
             
         } else if sender.state == .changed {
             print("Gesture is changing")
-            picImageView.center = CGPoint(x: cardInitialCenter.x, y: cardInitialCenter.y + translation.y)
+            if (translation.x > 0) && !(translation.x > 50){
+                picImageView.transform = CGAffineTransform(translationX: 50, y: 0)
+                picImageView.transform = picImageView.transform.rotated(by: CGFloat(Double(translation.x) * Double.pi / 180))
+            }
+            else if (translation.x < 0) && !(translation.x < -50){
+                picImageView.transform = CGAffineTransform(translationX: -50, y: 0)
+                picImageView.transform = picImageView.transform.rotated(by: CGFloat(Double(translation.x) * Double.pi / 180))
+            }
+            else
+            {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.picImageView.isHidden = true
+                })
+            }
         } else if sender.state == .ended {
             print("Gesture ended")
+            picImageView.transform = CGAffineTransform.identity
         }
     }
     
