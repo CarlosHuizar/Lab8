@@ -14,6 +14,7 @@
 		98F7B95420699530008E18B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F7B95220699530008E18B6 /* LaunchScreen.storyboard */; };
 		98F7B95F20699531008E18B6 /* tinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F7B95E20699531008E18B6 /* tinderTests.swift */; };
 		98F7B96A20699531008E18B6 /* tinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F7B96920699531008E18B6 /* tinderUITests.swift */; };
+		98F7B97820699653008E18B6 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F7B97720699653008E18B6 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		98F7B96520699531008E18B6 /* tinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F7B96920699531008E18B6 /* tinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinderUITests.swift; sourceTree = "<group>"; };
 		98F7B96B20699531008E18B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98F7B97720699653008E18B6 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				98F7B95020699530008E18B6 /* Assets.xcassets */,
 				98F7B95220699530008E18B6 /* LaunchScreen.storyboard */,
 				98F7B95520699530008E18B6 /* Info.plist */,
+				98F7B97720699653008E18B6 /* CardsViewController.swift */,
 			);
 			path = tinder;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				98F7B94C20699530008E18B6 /* ViewController.swift in Sources */,
 				98F7B94A20699530008E18B6 /* AppDelegate.swift in Sources */,
+				98F7B97820699653008E18B6 /* CardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
