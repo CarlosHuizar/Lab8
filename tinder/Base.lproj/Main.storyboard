@@ -31,13 +31,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="infoButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJn-0c-lwv">
-                                <rect key="frame" x="16" y="168" width="343" height="351"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="vV2-NU-20a" kind="show" id="XmY-fT-dG8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -45,6 +38,7 @@
                     <navigationItem key="navigationItem" id="Sd1-ea-6Lh"/>
                     <connections>
                         <outlet property="picImageView" destination="fsz-Ss-I4z" id="cq4-kN-WFB"/>
+                        <segue destination="vV2-NU-20a" kind="show" identifier="profileSegue" id="bEv-hZ-fsf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,6 +77,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IYq-eL-MPR"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImage" destination="dD4-NA-Hlm" id="9or-g2-VlX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6P-AV-PO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

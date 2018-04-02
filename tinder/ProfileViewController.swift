@@ -10,19 +10,23 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBAction func onDone(_ sender: Any) {
-        print("pop?")
-        performSegueToReturnBack()
-    }
+    @IBOutlet weak var profileImage: UIImageView!
+    var newImage: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        profileImage.image = newImage
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func onDone(_ sender: Any) {
+        print("pop?")
+        performSegueToReturnBack()
     }
     
 

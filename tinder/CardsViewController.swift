@@ -17,11 +17,11 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didCardSwipe(_:)))
-
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         // Attach it to a view of your choice. If it's a UIImageView, remember to enable user interaction
         picImageView.isUserInteractionEnabled = true
         picImageView.addGestureRecognizer(panGestureRecognizer)
-        
+        picImageView.addGestureRecognizer(tapGestureRecognizer)
         
         
 
@@ -32,10 +32,15 @@ class CardsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        _ = tapGestureRecognizer.view as! UIImageView
+        self.performSegue(withIdentifier: "profileSegue", sender: self)
+    }
     
     @IBAction func didCardSwipe(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: view)
-        let velocity = sender.velocity(in: view)
+        _ = sender.location(in: view)
+        _ = sender.velocity(in: view)
         let translation = sender.translation(in: view)
         
         if sender.state == .began {
@@ -64,18 +69,16 @@ class CardsViewController: UIViewController {
         }
     }
     
-    
-    
-    
+//    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+//        performSegue(withIdentifier: "profileSegue", sender: sender)
+//
+//    }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            if segue.identifier == "profileSegue" {
+                let profileViewController = segue.destination as! ProfileViewController
+                profileViewController.newImage = picImageView.image
+            }
     }
-    */
 
 }
