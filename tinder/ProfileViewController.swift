@@ -10,6 +10,10 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBAction func onDone(_ sender: Any) {
+        print("pop?")
+        performSegueToReturnBack()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,4 +26,14 @@ class ProfileViewController: UIViewController {
     }
     
 
+}
+
+extension UIViewController {
+    func performSegueToReturnBack()  {
+        if let nav = self.navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }
